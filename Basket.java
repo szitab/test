@@ -38,7 +38,7 @@ public class Basket extends AbstractBasket {
 					itemsEquals = false;
 				} else {
 					firstChecked = true;
-					itemsEquals = true;
+					itemsEquals = o.items.get(i).equals(items.get(i));
 				}
 			}
 		}
