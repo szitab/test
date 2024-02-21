@@ -61,7 +61,9 @@ public class Basket extends AbstractBasket {
 	public void logError(Basket... baskets, String level) {
 		String msg = "Baskets are wrong: ";
 		for (int i = 0; i < baskets.length; ++i) {
-			msg += "basket[" + i + "]: " + 
+			if (!validate(basket)) {
+				msg += "basket[" + i + "], ";
+			}
 		}
 		if (LogLevelService.isAtLeast(level, ConfigService.get("logLevel"))) {
 			System.out.println(new Calendar() + " " + msg);
